@@ -72,7 +72,7 @@ Let's write the migration that will make this happen. Run this code to create
 a migration:
 
 ```console
-$ bundle exec rake db:create_migration NAME=create_games
+bin/rake db:create_migration NAME=create_games
 ```
 
 In the migration file, write the following migration:
@@ -126,7 +126,7 @@ Ok! Now that we know what we need to create, let's run this code to create a
 migration:
 
 ```console
-$ bundle exec rake db:create_migration NAME=create_reviews
+bin/rake db:create_migration NAME=create_reviews
 ```
 
 In the migration file:
@@ -148,7 +148,7 @@ Great! Now go ahead and run the following command in your terminal to
 run our migrations:
 
 ```console
-$ bundle exec rake db:migrate
+bin/rake db:migrate
 ```
 
 There is also some code in the `db/seeds.rb` file that we'll use to generate
@@ -159,7 +159,7 @@ review.
 Run this to seed the database:
 
 ```console
-$ bundle exec rake db:seed
+bin/rake db:seed
 ```
 
 ## Building our Associations using Active Record Macros
@@ -200,7 +200,7 @@ Let's start by talking through the code we want to be able to write here. Hop
 into your console by running:
 
 ```console
-$ bundle exec rake console
+bin/rake console
 ```
 
 From the console, access the first review:
@@ -244,7 +244,7 @@ class Review < ActiveRecord::Base
 end
 ```
 
-Then run `rake console` again. Now we can access any review's associated game
+Then run bin/rake console` again. Now we can access any review's associated game
 directly by using this new instance method:
 
 ```rb
@@ -367,12 +367,12 @@ these two tables to establish this connection.
 
 ## Our Code in Action: Working with Associations
 
-All the tests should be passing now if you run `learn test`, so from here on
+All the tests should be passing now if you run `bin/rspec`, so from here on
 we'll just be exploring the functionality provided by the `has_many` and
 `belongs_to` macros. Follow along with this code by running:
 
 ```console
-$ bundle exec rake console
+bin/rake console
 ```
 
 To recap what we've seen so far:
